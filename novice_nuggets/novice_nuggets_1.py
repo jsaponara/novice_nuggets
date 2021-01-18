@@ -9,6 +9,11 @@ they were certain would work, even though they likely suspected there
 was a better way.  Your task is to find that way.
 '''
 
+'''
+addendum: what we learned from this first nugget:
+    nuggets should be runnable.
+'''
+
 ###############
 # part 1: simplify this function:
 
@@ -18,7 +23,7 @@ def send_mail_1(
     path=None, attachments=None,
     cc_recipients=None, bcc_recipients=None
 ):  
-    if path:
+    if path is None:
         _send_mail(
             unit_of_work=unit_of_work,
             sender=sender,
@@ -28,7 +33,6 @@ def send_mail_1(
             subject=subject,
             body=body,
             attachments=attachments,
-            path=path
         )
     else:
         _send_mail(
@@ -40,6 +44,7 @@ def send_mail_1(
             subject=subject,
             body=body,
             attachments=attachments,
+            path=path
         )
 
 
